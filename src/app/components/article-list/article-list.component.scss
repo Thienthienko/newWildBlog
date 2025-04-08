@@ -1,17 +1,20 @@
 .articleList {
+  width: 100vw;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
-  width: 150px;
+  width: 250px;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 5px;
 
   &-Container {
     padding: 2px 16px;
@@ -22,6 +25,38 @@
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
-img {
-  border-radius: 5px 5px 0 0;
+.buttonPublication {
+  background-color: #fff;
+  border: 1px solid #d5d9d9;
+  border-radius: 8px;
+  box-shadow: rgba(213, 217, 217, 0.5) 0 2px 5px 0;
+  box-sizing: border-box;
+  color: #0f1111;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Amazon Ember", sans-serif;
+  font-size: 13px;
+  line-height: 29px;
+  padding: 0 10px 0 11px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+}
+
+.buttonPublication:hover {
+  background-color: #f7fafa;
+}
+
+.buttonPublication:focus {
+  border-color: #008296;
+  box-shadow: rgba(213, 217, 217, 0.5) 0 2px 5px 0;
+  outline: 0;
+}
+
+.popular-article {
+  border: 1px red solid;
 }
