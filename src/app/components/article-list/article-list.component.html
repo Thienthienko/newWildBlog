@@ -1,0 +1,16 @@
+<div class="articleList">
+  <div class="card">
+    <img src="{{ article.image }}" [alt]="article.title" />
+    <div class="card-Container">
+      <h2>
+        {{ article.title }}
+      </h2>
+      <p>
+        {{ article.createdAt }}
+        {{ article.categoryName }}
+        {{ article.likeCount }}
+        {{ article.content }}
+      </p>
+    </div>
+  </div>
+</div>
