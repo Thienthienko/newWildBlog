@@ -1,16 +1,26 @@
 <div class="articleList">
-  <div class="card">
-    <img src="{{ article.image }}" [alt]="article.title" />
-    <div class="card-Container">
-      <h2>
-        {{ article.title }}
-      </h2>
-      <p>
-        {{ article.createdAt }}
-        {{ article.categoryName }}
-        {{ article.likeCount }}
-        {{ article.content }}
-      </p>
+  @for (article of articles; track $index){
+    <div class="card">
+      <div [ngClass]="{ 'popular-article': article.likeCount > 100 }">
+      <img src="{{ article.image }}" />
+        <div class="card-Container">
+          <p [ngStyle]="{ color: article.isPublished ? 'green' : 'red' }">
+            <b>Article {{ article.isPublished ? "publié" : "non publié" }}</b>
+          </p>
+          <h3>
+            {{ article.title }}
+          </h3>
+          <p>
+            {{ article.content }}
+          </p>
+          <p>{{ article.likeCount }} ❤️</p>
+          <button class="buttonPublication" (click)="togglePublication($index)">
+            {{ article.isPublished ? "Dépublier" : "Publier" }} l'article
+          </button>
+        </div>
+      </div>
     </div>
-  </div>
+  } @if (visibleArticleLength == 0){
+  <p>Il n'y a aucun article publié pour le moment</p>
+}
 </div>
